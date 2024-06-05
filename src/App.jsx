@@ -9,10 +9,11 @@ const App = () => {
   const handleClick = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://127.0.0.1:5000/", {
+      const res = await fetch("https://selenium-proxy.onrender.com/", {
         method: "POST",
       });
       const json = await res.json();
+      console.log(json)
       setLoading(false);
       if (json.data === "error") {
         toast.error("Something went wrong!");
